@@ -1,8 +1,7 @@
-// SimpleParallax.jsx
 import React from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-const SimpleParallax = () => {
+const LayeredParallax = () => {
   // 1) 스크롤 위치를 가져온다
   const { scrollY } = useScroll();
 
@@ -12,7 +11,6 @@ const SimpleParallax = () => {
 
   return (
     <div style={{ height: "100vh", position: "relative", overflow: "hidden" }}>
-      {/* 배경 레이어 */}
       <motion.div
         style={{
           y: bgY,
@@ -28,7 +26,6 @@ const SimpleParallax = () => {
         }}
       />
 
-      {/* 전경 레이어 */}
       <motion.div
         style={{
           y: fgY,
@@ -50,4 +47,4 @@ const SimpleParallax = () => {
   );
 };
 
-export default SimpleParallax;
+export default LayeredParallax;

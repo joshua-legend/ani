@@ -6,11 +6,10 @@ const FixedBackgroundParallax = () => {
   // 1) 스크롤 위치를 실시간으로 구독
   const { scrollY } = useScroll();
 
-  // 2) 스크롤 범위 [0, 500]px 에 대응해 전경 콘텐츠를 -200px에서 0px으로 이동
   const fgY = useTransform(scrollY, [0, 500], [0, -200], { clamp: true });
 
   return (
-    <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+    <div style={{ position: "relative", height: "200vh", overflow: "hidden" }}>
       {/* 3) 고정된 배경 레이어 (CSS로 fixed 처리) */}
       <div
         style={{
@@ -19,7 +18,8 @@ const FixedBackgroundParallax = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "url('https://www.genesis.com/etc.clientlibs/genesis-p2/kr/clientlibs/clientlib-spacepage/resources/assets/images/space/overview/main-intro/spacebg-t.png')",
+          backgroundImage:
+            "url('https://www.genesis.com/etc.clientlibs/genesis-p2/kr/clientlibs/clientlib-spacepage/resources/assets/images/space/overview/main-intro/spacebg-t.png')",
           backgroundSize: "cover",
           backgroundPosition: "50% 10%",
           zIndex: -1,
